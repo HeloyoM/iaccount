@@ -24,7 +24,7 @@ app.use(cors("*"))
 
 // })
 
-app.post('/api', async (req, res) => {
+app.post('/api/user', async (req, res) => {
     console.log(req)
     const user_id = uuidv4()
     const currentTime = new Date().getTime()
@@ -44,8 +44,8 @@ app.post('/api', async (req, res) => {
     const newAccount = {
         id: uuidv4(),
         owners: [user_id],
-        outcome: {},
-        income: {},
+        outcome: [],
+        income: [],
         timestamp: currentTime
     }
     console.log({ users })
@@ -77,6 +77,41 @@ app.post('/api', async (req, res) => {
         }
 
         res.send(JSON.stringify(newUser)).status(201)
+    } catch (error) {
+        console.log({ error })
+        res.status(500).send('Error get data')
+    }
+
+})
+
+app.post('/api/balance', async (req, res) => {
+    // console.log(req.body)
+
+    const outcome = req.body
+    outcome.timestamp = new Date().getTime()
+    outcome.id = uuidv4()
+    outcome.executor = '65de4db9-2b69-4005-82ee-6c6f61bda621'
+
+    try {
+
+        fs.readFile(join(__dirname, accountsPath), 'utf-8', (err, data) => {
+
+            const accounts = JSON.parse(data)
+
+            const crrAccount = accounts.find(a => a.owners.includes(outcome.executor))
+
+            crrAccount.outcome.push(outcome)
+
+            fs.writeFile(join(__dirname, accountsPath), JSON.stringify(accounts), 'utf8', (err) => {
+                if (err) {
+                    console.log(
+                        `Something went wrong whild inserting new account: ${err}`,
+                    )
+                }
+            })
+        })
+
+        // res.send(JSON.stringify(newUser)).status(201)
     } catch (error) {
         console.log({ error })
         res.status(500).send('Error get data')

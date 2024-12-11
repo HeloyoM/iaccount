@@ -4,8 +4,41 @@
         "owners": [
             "65de4db9-2b69-4005-82ee-6c6f61bda621"
         ],
-        "outcome": {},
-        "income": {},
+        "outcome": [
+            {
+                "amount": 1234,
+                "currency": "12",
+                "source": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+                "timestamp": 1733913770861,
+                "id": "ea8840e0-5d2a-46c6-bc2a-72de4e600a01",
+                "executor": "65de4db9-2b69-4005-82ee-6c6f61bda621"
+            },
+            {
+                "amount": 100,
+                "currency": "12",
+                "source": "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+                "timestamp": 1733913871277,
+                "id": "cedc410c-b538-4c20-855c-d9717f9f4970",
+                "executor": "65de4db9-2b69-4005-82ee-6c6f61bda621"
+            },
+            {
+                "amount": 12,
+                "currency": "12",
+                "source": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+                "timestamp": 1733916740834,
+                "id": "a77d2713-9343-4002-8230-ca7e78e6ec6e",
+                "executor": "65de4db9-2b69-4005-82ee-6c6f61bda621"
+            },
+            {
+                "amount": 1234,
+                "currency": "12",
+                "source": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+                "timestamp": 1733918273163,
+                "id": "0eacddde-1b28-48c9-8bf7-cebedb47e9b3",
+                "executor": "65de4db9-2b69-4005-82ee-6c6f61bda621"
+            }
+        ],
+        "income": [],
         "timestamp": 1733172893483
     },
     {
@@ -13,8 +46,8 @@
         "owners": [
             "efd8585e-0ced-470f-9e4d-989e4b0a1d08"
         ],
-        "outcome": {},
-        "income": {},
+        "outcome": [],
+        "income": [],
         "timestamp": 1733215015366
     }
 ]
