@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import SoftwareNameHeader from './components/Header/SoftwareNameHeader'
+import SoftwareNameHeader from '../components/Header/SoftwareNameHeader'
 import { Button, TextInput } from 'react-native-paper'
-import { register } from './api/user'
+import { register } from '../api/user'
 
 const FirstEntranceScreen = () => {
     const [user, setUser] = React.useState("");
